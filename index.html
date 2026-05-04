@@ -286,6 +286,20 @@
       color: var(--bone-muted);
       letter-spacing: 0.06em;
     }
+
+    footer.site p {
+      margin: 0;
+    }
+
+    .site-visit {
+      margin-top: 0.65rem;
+    }
+
+    #visit-count {
+      font-weight: 600;
+      color: var(--ember);
+      letter-spacing: 0.02em;
+    }
   </style>
 </head>
 <body>
@@ -438,7 +452,29 @@
       </div>
     </section>
 
-    <footer class="site">by ysBRobows — série FROM (MGM+)</footer>
+    <footer class="site">
+      <p>by ysBRobows — série FROM (MGM+)</p>
+      <p class="site-visit">Acessos: <span id="visit-count">…</span></p>
+    </footer>
   </div>
+  <script>
+    (function () {
+      var el = document.getElementById("visit-count");
+      if (!el) return;
+      var url = "https://api.counterapi.dev/v1/from-t4-static-page/visitas/up";
+      fetch(url)
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (typeof d.count === "number") {
+            el.textContent = d.count.toLocaleString("pt-BR");
+          } else {
+            el.textContent = "—";
+          }
+        })
+        .catch(function () {
+          el.textContent = "—";
+        });
+    })();
+  </script>
 </body>
 </html>
