@@ -213,6 +213,40 @@
       color: var(--ember);
     }
 
+    .card--novo {
+      border: 2px solid var(--ember);
+      box-shadow:
+        0 0 0 1px rgba(196, 92, 42, 0.35),
+        0 8px 28px rgba(196, 92, 42, 0.18);
+    }
+
+    .card--novo:hover {
+      border-color: var(--ember);
+      box-shadow:
+        0 0 0 1px rgba(196, 92, 42, 0.45),
+        0 12px 36px rgba(196, 92, 42, 0.28);
+    }
+
+    .card-badge-novo {
+      position: absolute;
+      top: 0.65rem;
+      left: 50%;
+      z-index: 6;
+      transform: translateX(-50%);
+      padding: 0.3rem 0.85rem 0.2rem;
+      font-family: "Outfit", system-ui, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bone);
+      background: linear-gradient(180deg, rgba(196, 92, 42, 0.95) 0%, var(--ember) 50%, var(--ember-dim) 100%);
+      border: 1px solid var(--ember-dim);
+      border-radius: 2px;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.35), 0 2px 14px rgba(196, 92, 42, 0.45);
+      pointer-events: none;
+    }
+
     .thumb {
       position: relative;
       aspect-ratio: 16 / 9;
@@ -406,8 +440,9 @@
           </div>
         </a>
 
-        <article class="card card--soon">
+        <a class="card card--link card--novo" href="https://drive.google.com/file/d/1kdF5FskBAywaUvRJL0SrvJqeEUqEWidA/view?usp=sharing" target="_blank" rel="noopener noreferrer">
           <div class="thumb">
+            <span class="card-badge-novo">NOVO</span>
             <img src="https://resizing.flixster.com/gEpmGUo8pkxOASGRGugaR_VYjW8=/370x208/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32188272_e_h8_aa.jpg" alt="" width="370" height="208" loading="lazy">
           </div>
           <div class="card-body">
@@ -415,10 +450,7 @@
             <h3>A Calma Antes</h3>
             <p class="desc">Os moradores de uma cidade pequena procuram uma saída enquanto forças desconhecidas os impedem de partir.</p>
           </div>
-          <div class="card-soon-overlay" aria-hidden="true">
-            <p class="card-soon-text">Em breve:<strong>21 de junho de 2026</strong></p>
-          </div>
-        </article>
+        </a>
 
         <article class="card card--soon">
           <div class="thumb">
